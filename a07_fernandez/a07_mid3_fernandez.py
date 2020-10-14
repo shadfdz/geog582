@@ -7,12 +7,9 @@
 # #######################################
 # # Name: Shad Fernandez
 # # RedID: 810466716
-# # Date: 16-SEP-2020
+# # Date: 14-OCT-2020
 # #######################################
 
-
-
-# Q1
 class Point():
     """
     Class has attributes to store a 2d or 3d coordinate
@@ -33,7 +30,7 @@ class Point():
         calc_distance: calculates distance between self and another point
 
     """
-    def __init__(self, x=None, y=None, z=0, cluster_id = -1):
+    def __init__(self, x=None, y=None, z=None, cluster_id = -1):
         """
         Constructor initializes point coordinates
 
@@ -48,7 +45,7 @@ class Point():
             self.y = y
             self.z = z
             self.cluster_id = cluster_id
-            if self.z == 0:
+            if self.z == None:
                 self.__dimensions = 2
             else:
                 self.__dimensions = 3
@@ -76,7 +73,6 @@ class Point():
         except TypeError:
             print("Please enter a numeric value")
 
-# Q2
 
 import random  # importing necessary module
 
@@ -111,15 +107,21 @@ def random_coordinates(num_point=10, dimension=2, lower_bound=(0, 0), upper_boun
 # Q1
 
 def check_same_coordinate(point1, point2):
-    if (point1.x == point2.x) and (point1.y == point2.y) and (point1.z == point2.z):
-        return True
-    else:
-        return False
+    """
+    Function checks if two point instances have the same positon
+    """
+    try:
+        if (point1.x == point2.x) and (point1.y == point2.y) and (point1.z == point2.z):
+            return True
+        else:
+            return False
+    except TypeError:
+        print("Incorrect argument type detected")
 
 
 # Q2
 
-import sys
+import sys  # import necessary package
 
 class MyKmeans:
     """
@@ -163,27 +165,27 @@ class MyKmeans:
         Method sets k, num_points, dimension, lower bound and upper bound values
         Exceptions raised when ValueError is encountered
         """
-        self.input_list = []  # list for creating tuples for lower and upper bound values
-
         try:
             self.k = float(input("Enter the k value: "))  # get k value
             self.num_points = float(input("Enter number of points: "))  # get num_points value
             self.dimension = float(input("Enter number of dimensions: "))  # get dimensions
 
-            # use loop to get lower bound coordinates
-            for i in range(2):
-                self.input_list.append(int(input("Enter a lower bound number twice: ")))
-            self.lower_bound = tuple(self.input_list)  # convert list to tuple
-            # float not int, two input statement inside tuple
+            # Retrieve lower bound coordinates
+            if (self.dimension == 2):
+                self.lower_bound = tuple(float(input("Enter first lower bound number")),
+                float(input("Enter second lower bound number")))
+            else:
+                 self.lower_bound = tuple(float(input("Enter first lower bound number")),
+                float(input("Enter second lower bound number")), float(input("Enter third lower bound number")))
 
+                        # Retrieve lower bound coordinates
+            if (self.dimension == 2):
+                self.upper_bound = tuple(float(input("Enter first lower bound number")),
+                float(input("Enter second lower bound number")))
+            else:
+                 self.upper_bound = tuple(float(input("Enter first lower bound number")),
+                float(input("Enter second lower bound number")), float(input("Enter third lower bound number")))
 
-            self.input_list.clear()  # clear list to hold coordinates
-
-            # use loop to get upper bound coordinates
-            for i in range(2):
-                self.input_list.append(int(input("Enter an upper bound number twice: ")))
-
-            self.upper_bound = (tuple(self.input_list))  # convert list to tuple
 
         #  throw ValueError if non numeric values are entered
         except ValueError:
@@ -209,7 +211,7 @@ class MyKmeans:
 
     def assign_random_clust_number(self):
         """
-        Method assigns cluster id b/w 1 and k randomly to points in self.points
+        Method assigns random cluster id between 1 and k to points in self.points
         """
         for point in self.points:  # iterate through points list
             point.cluster_id = random.randint(1,self.k)  # assign random cluster id between 1 and k
@@ -234,7 +236,7 @@ class MyKmeans:
         """
         flag_all_same_coordinate = True  # set flag
 
-        # Iterate through centroid and update centroid coordinates based on points with matching cluster ids
+        # Iterate through centroids and update centroid coordinates based on points with matching cluster ids
         for centroid in self.centroids.values():
             ref_centroid = Point(centroid.x, centroid.y, centroid.z, centroid.cluster_id)  # create reference centroid
             ref_cluster_id = centroid.cluster_id  # add cluster id
@@ -249,7 +251,8 @@ class MyKmeans:
                 if (point.cluster_id == ref_cluster_id):
                     sum_x_coordinates += float(point.x)
                     sum_y_coordinates += float(point.y)
-                    sum_z_coordinates += float(point.z)
+                    if (self.dimension == 3):
+                        sum_z_coordinates += float(point.z)
                     sum_num_points += 1
 
             # Get average of each coordinate and update centroid coordinates
@@ -308,7 +311,7 @@ def main():
             pt = mykmean.centroids[i]
             plt.scatter(pt.x, pt.y, c=[cmap(idx_sh[pt.cluster_id - 1])], marker=centroid_marker, s=centroid_size)
 
-        plt.show()
+        plt.show()  # show plot
 
     plot_clust_points(kmeans)
 
