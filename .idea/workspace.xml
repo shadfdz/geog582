@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="184a24b3-f6b2-4cb8-a408-406a55571b5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a06_main_fernandez.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a06_mid_fernandez.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/a06_sub_fernandez.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello_m.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/libs/MyKmean.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/libs/Point.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/libs/Utility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/libs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mid_kmean_fernandez/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/geog585_proj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/geog585_proj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a06_main_fernandez.py" beforeDir="false" afterPath="$PROJECT_DIR$/a06_main_fernandez.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a06_mid_fernandez.py" beforeDir="false" afterPath="$PROJECT_DIR$/a06_mid_fernandez.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a06_sub_fernandez.py" beforeDir="false" afterPath="$PROJECT_DIR$/a06_sub_fernandez.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a07_fernandez/a07_fio_fernandez.py" beforeDir="false" afterPath="$PROJECT_DIR$/a07_fernandez/a07_fio_fernandez.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a07_fernandez/a07_mid3_fernandez.py" beforeDir="false" afterPath="$PROJECT_DIR$/a07_fernandez/a07_mid3_fernandez.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +51,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/Downloads" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.a06_main_fernandez">
-    <configuration name="a02_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="a06_mid_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="geog585_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -61,7 +74,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a02_fernandez.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a06_mid_fernandez.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -70,7 +83,49 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="a03_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="a07_fio_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="geog585_proj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/a07_fernandez" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a07_fernandez/a07_fio_fernandez.py" />
+      <option name="PARAMETERS" value="&quot;archive.org&quot; &quot;reddit.com&quot; &quot;sdsu.edu&quot; &quot;github.com&quot; &quot;kaggle.com&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="a07_mid3_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="geog585_proj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/a07_fernandez" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a07_fernandez/a07_mid3_fernandez.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hello_m" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="geog585_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,7 +137,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a03_fernandez.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello_m.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,7 +146,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="a04_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="geog585_proj" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -99,11 +154,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mid_kmean_fernandez" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a04_fernandez.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mid_kmean_fernandez/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -112,55 +167,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="a05_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="geog585_proj" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a05_fernandez.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="a06_main_fernandez" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="geog585_proj" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/a06_main_fernandez.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+    <list>
+      <item itemvalue="Python.a06_mid_fernandez" />
+      <item itemvalue="Python.a07_fio_fernandez" />
+      <item itemvalue="Python.a07_mid3_fernandez" />
+      <item itemvalue="Python.hello_m" />
+      <item itemvalue="Python.main" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.a06_main_fernandez" />
-        <item itemvalue="Python.a05_fernandez" />
-        <item itemvalue="Python.a04_fernandez" />
-        <item itemvalue="Python.a03_fernandez" />
-        <item itemvalue="Python.a02_fernandez" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.a07_mid3_fernandez" />
+        <item itemvalue="Python.a07_fio_fernandez" />
+        <item itemvalue="Python.hello_m" />
+        <item itemvalue="Python.a06_mid_fernandez" />
       </list>
     </recent_temporary>
   </component>
@@ -187,45 +207,102 @@
       <option name="presentableId" value="Default" />
       <updated>1598481978716</updated>
     </task>
+    <task id="LOCAL-00001" summary="updated centroid">
+      <created>1602653722500</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602653722500</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="answering q2" />
-    <option name="LAST_COMMIT_MESSAGE" value="answering q2" />
+    <MESSAGE value="updated centroid" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated centroid" />
   </component>
   <component name="WindowStateProjectService">
     <state x="402" y="249" key="#Notifications" timestamp="1601869657685">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="402" y="249" key="#Notifications/0.23.1680.1027@0.23.1680.1027" timestamp="1601869657685" />
-    <state x="550" y="200" key="CommitChangelistDialog2" timestamp="1601869405076">
+    <state x="479" y="324" width="1071" height="694" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602717675385">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="550" y="200" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1601869405076" />
-    <state width="1659" height="279" key="GridCell.Tab.0.bottom" timestamp="1601870183103">
+    <state x="479" y="324" width="1071" height="694" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1602717675385" />
+    <state x="924" y="719" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602298072948">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1601870183103" />
-    <state width="1659" height="279" key="GridCell.Tab.0.center" timestamp="1601870183101">
+    <state x="924" y="719" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1680.1027@0.23.1680.1027" timestamp="1602298072948" />
+    <state x="550" y="200" key="CommitChangelistDialog2" timestamp="1602653722072">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1601870183101" />
-    <state width="1659" height="279" key="GridCell.Tab.0.left" timestamp="1601870183101">
+    <state x="550" y="200" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1602653722072" />
+    <state width="1572" height="149" key="GridCell.Tab.0.bottom" timestamp="1602887303267">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1601870183101" />
-    <state width="1659" height="279" key="GridCell.Tab.0.right" timestamp="1601870183102">
+    <state width="947" height="369" key="GridCell.Tab.0.bottom/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150466" />
+    <state width="1572" height="149" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1602887303267" />
+    <state width="1572" height="149" key="GridCell.Tab.0.center" timestamp="1602887303264">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1659" height="279" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1601870183102" />
-    <state x="520" y="274" key="SettingsEditor" timestamp="1600836617931">
+    <state width="947" height="369" key="GridCell.Tab.0.center/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150465" />
+    <state width="1572" height="149" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1602887303264" />
+    <state width="1572" height="149" key="GridCell.Tab.0.left" timestamp="1602887303256">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="520" y="274" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1600836617931" />
+    <state width="947" height="369" key="GridCell.Tab.0.left/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150465" />
+    <state width="1572" height="149" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1602887303256" />
+    <state width="1572" height="149" key="GridCell.Tab.0.right" timestamp="1602887303266">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="947" height="369" key="GridCell.Tab.0.right/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150466" />
+    <state width="1572" height="149" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1602887303266" />
+    <state width="827" height="356" key="GridCell.Tab.1.bottom" timestamp="1602653889939">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="947" height="369" key="GridCell.Tab.1.bottom/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150468" />
+    <state width="827" height="356" key="GridCell.Tab.1.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1602653889939" />
+    <state width="827" height="356" key="GridCell.Tab.1.center" timestamp="1602653889938">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="947" height="369" key="GridCell.Tab.1.center/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150467" />
+    <state width="827" height="356" key="GridCell.Tab.1.center/0.23.1680.1027@0.23.1680.1027" timestamp="1602653889938" />
+    <state width="827" height="356" key="GridCell.Tab.1.left" timestamp="1602653889937">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="947" height="369" key="GridCell.Tab.1.left/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150467" />
+    <state width="827" height="356" key="GridCell.Tab.1.left/0.23.1680.1027@0.23.1680.1027" timestamp="1602653889937" />
+    <state width="827" height="356" key="GridCell.Tab.1.right" timestamp="1602653889938">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="947" height="369" key="GridCell.Tab.1.right/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602560150468" />
+    <state width="827" height="356" key="GridCell.Tab.1.right/0.23.1680.1027@0.23.1680.1027" timestamp="1602653889938" />
+    <state x="683" y="328" key="SettingsEditor" timestamp="1602342575776">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="683" y="328" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1602342575776" />
+    <state x="520" y="309" key="Vcs.Push.Dialog.v2" timestamp="1602653796764">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="520" y="309" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1602653796764" />
+    <state x="747" y="401" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602891875935">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="747" y="401" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1602891875935" />
+    <state x="489" y="357" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602311726412">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="489" y="357" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1680.1027@0.23.1680.1027" timestamp="1602311726412" />
     <state x="349" y="126" width="837" height="810" key="find.popup" timestamp="1598482554992">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="349" y="126" width="837" height="810" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1598482554992" />
+    <state x="2346" y="350" key="git4idea.merge.GitPullDialog" timestamp="1602708673321">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2346" y="350" key="git4idea.merge.GitPullDialog/0.23.1680.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1602708673321" />
     <state x="1114" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1600837853275">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
