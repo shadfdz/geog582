@@ -4,6 +4,7 @@ import sys  # import necessary package
 import random
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
+import csv
 
 
 import mid_kmean_fernandez.libs.Utility as ut
@@ -162,6 +163,72 @@ class MyKmeans:
         # return flag
         return  flag_all_same_coordinate
 
+    def read_xy_from_file(self, file_path):
+
+        self.points = []
+
+        f = open(file_path, 'r')
+        lines = f.readlines()
+
+        list_x = []
+        list_y = []
+        list_z = []
+
+        for line in lines:
+            line_list = str.split(line)
+            if len(line_list) == 2:
+                self.points.append(pt.Point(float(line_list[0]), float(line_list[1])))
+                list_x.append(int(line_list[0]))
+                list_y.append(int(line_list[1]))
+            else:
+                self.points.append(pt.Point(float(line_list[0]), float(line_list[1]), float(line_list[2])))
+                list_x.append(int(line_list[0]))
+                list_y.append(int(line_list[1]))
+                list_z.append(int(line_list[2]))
+
+        if len(list_z) == 0:
+            self.lower_bound = (min(list_x),min(list_y))
+            self.upper_bound = (max(list_x),max(list_y))
+        else:
+            self.lower_bound = (min(list_x),min(list_y),min(list_z))
+            self.upper_bound = (max(list_x),max(list_y),max(list_z))
+
+    def save_clust_points(mykmean, out_file_path, pt_size=100, centroid_size=200, pt_marker="o", centroid_marker="x"):
+        cmap = plt.cm.get_cmap('rainbow', mykmean.k)
+
+        idx_sh = list(range(mykmean.k))
+        random.shuffle(idx_sh)
+
+        for i in mykmean.points:
+            plt.scatter(i.x, i.y, c=cmap(idx_sh[i.cluster_id-1]), marker=pt_marker, s=pt_size)
+        for i in mykmean.centroids:
+            pt = mykmean.centroids[i]
+            plt.scatter(pt.x, pt.y, c=cmap(idx_sh[pt.cluster_id-1]), marker=centroid_marker, s=centroid_size)
+        plt.savefig(out_file_path)
+
+    def save_clust_point_csv(self):
+
+        file_1 = open('./output/data_points.csv', 'w')
+        file_2 = open('./output/cluster_centroids.csv', 'w')
+
+        with file_1:
+            writer = csv.writer(file_1)
+
+            for point in self.points:
+                writer.writerow([point.x,point.y,point.z,point.cluster_id])
+
+        with file_2:
+            writer = csv.writer(file_2)
+
+            for i in self.centroids:
+                centroids = self.centroids[i]
+                writer.writerow([centroids.x, centroids.y, centroids.z, centroids.cluster_id])
+
+
+
+
+
+
 def plot_clust_points(mykmean, pt_size = 100, centroid_size=200, pt_marker="o", centroid_marker="X"):
     # create a color map object based on a rainbow colormap
     cmap = cm.get_cmap('rainbow', mykmean.k)
@@ -179,3 +246,5 @@ def plot_clust_points(mykmean, pt_size = 100, centroid_size=200, pt_marker="o", 
         plt.scatter(pt.x, pt.y, c=[cmap(idx_sh[pt.cluster_id - 1])], marker=centroid_marker, s=centroid_size)
 
     plt.show()  # show plot
+
+
