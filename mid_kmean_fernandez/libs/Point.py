@@ -55,7 +55,10 @@ class Point():
 
     def calc_distance(self, obj):
         """
-        function calculates distance between self and another Point object
+        Function calculates distance between self and another Point object
+
+        Argument:
+            obj (Point): Point object
         """
         try:
             if (isinstance(obj, Point)) and (self.__dimensions == 2) and (obj.__dimensions == 2):

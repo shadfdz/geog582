@@ -1,12 +1,15 @@
+# #######################################
+# # Name: Shad Fernandez
+# # RedID: 810466716
+# # Date: 16-OCT-2020
+# #######################################
 
-import sys  # import necessary package
-
+# import necessary packages
+import sys
 import random
+import csv
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
-import csv
-
-
 import mid_kmean_fernandez.libs.Utility as ut
 import mid_kmean_fernandez.libs.Point as pt
 
@@ -17,7 +20,7 @@ class MyKmeans:
     Attributes:
         k (numeric): defines k clusters
         num_point (numeric): points to generate
-        dimesnsion (numeric): defines number of dimensions
+        dimension (numeric): defines number of dimensions
         lower_bound (numeric): tuple defines lower bound of points
         upper_bound (numeric): tuple defines upper bound of points
         points (list of Points): hold Point objects
@@ -25,19 +28,25 @@ class MyKmeans:
 
     Methods:
         set_parameters: method sets attribute values using user input
+        generate_points: create instances of points and stores them on self.points list
+        initialize_centroids: define k number of random centroids
+        assign_random_clust_number: assign random cluster number to points in self.points
+        update_centroids: update centroid coordinates
+        read_xy_from_file: export coordinates from txt file
+        save_clust_points: saves image of kmeans cluster analysis
+        save_clust_point_csv: saves coordinates and cluster id of points in cluster as csv
+        plot_clust_points: plots kmeans cluster
 
     """
     def __init__(self, k=4, num_points=10, dimension=2, lower_bound=(0, 0),
                  upper_bound=(10, 10)):
         """
-        Constructor sets attribute values inlcuding list of points and centroids
-
-        Arguments:
-            k (numeric): number of clusters
-            num_points (numeric): number of points. default at 10
-            dimension (numeric): number of dimensions, default at 2
-            lower_bound (numeric): tuple for lower bound coordinates
-            upper_bound (numeric): tuple for upper bound coordinates
+        Constructor
+        :param k: (numeric) number of clusters
+        :param num_points: (numeric) number of points. default at 10
+        :param dimension: (numeric) number of dimensions, default at 2
+        :param lower_bound: (numeric) tuple for lower bound coordinates
+        :param upper_bound: (numeric) tuple for upper bound coordinates
         """
         self.k = k
         self.num_points = num_points
@@ -164,7 +173,12 @@ class MyKmeans:
         return  flag_all_same_coordinate
 
     def read_xy_from_file(self, file_path):
+        """
+        Method accepts file path and imports coordinates to generate point classes for kmeans analysis
 
+        :param file_path: (string) file path of txt document
+
+        """
         self.points = []
 
         f = open(file_path, 'r')
@@ -194,40 +208,74 @@ class MyKmeans:
             self.upper_bound = (max(list_x),max(list_y),max(list_z))
 
     def save_clust_points(mykmean, out_file_path, pt_size=100, centroid_size=200, pt_marker="o", centroid_marker="x"):
+        """
+        :param out_file_path: file path
+        :param pt_size: size of points in image
+        :param centroid_size: size of centroids in image
+        :param pt_marker: type of marker
+        :param centroid_marker: type of marker.
+        """
         cmap = plt.cm.get_cmap('rainbow', mykmean.k)
 
         idx_sh = list(range(mykmean.k))
         random.shuffle(idx_sh)
 
+        # plot points
         for i in mykmean.points:
             plt.scatter(i.x, i.y, c=cmap(idx_sh[i.cluster_id-1]), marker=pt_marker, s=pt_size)
+        # plot centroids
         for i in mykmean.centroids:
             pt = mykmean.centroids[i]
             plt.scatter(pt.x, pt.y, c=cmap(idx_sh[pt.cluster_id-1]), marker=centroid_marker, s=centroid_size)
+        # save image in out put file path
         plt.savefig(out_file_path)
 
     def save_clust_point_csv(self):
+        """
+        Method saves coordinates of clusters and points in separate csv files
+        """
 
+        # target file paths
         file_1 = open('./output/data_points.csv', 'w')
         file_2 = open('./output/cluster_centroids.csv', 'w')
 
-        with file_1:
-            writer = csv.writer(file_1)
+        # if 2 dimensional, write x, y coordinates and cluster id
+        if (self.dimension == 2):
+
+            with file_1:
+                # create csv writer object
+                writer = csv.writer(file_1)
+                # iterate through points and write in file_1
+                for point in self.points:
+                    writer.writerow([point.x,point.y,point.cluster_id])
+
+            with file_2:
+                # create a csv writer object
+                writer = csv.writer(file_2)
+                # iterate through points and write in file_2
+                for i in self.centroids:
+                    centroids = self.centroids[i]
+                    writer.writerow([centroids.x, centroids.y, centroids.cluster_id])
+        elif (self.dimension == 3):
+        # if 3 dimensional, write x, y, z coordinates and cluster id
+
+            # create csv writer and write points and clusters in separate csv files
+            with file_1:
+                writer = csv.writer(file_1)
 
             for point in self.points:
-                writer.writerow([point.x,point.y,point.z,point.cluster_id])
+                writer.writerow([point.x, point.y, point.z, point.cluster_id])
 
-        with file_2:
-            writer = csv.writer(file_2)
+            with file_2:
+                writer = csv.writer(file_2)
 
             for i in self.centroids:
                 centroids = self.centroids[i]
-                writer.writerow([centroids.x, centroids.y, centroids.z, centroids.cluster_id])
+            writer.writerow([centroids.x, centroids.y, centroids.z, centroids.cluster_id])
 
-
-
-
-
+        else:
+        # if dimension is invalid, show error message
+            print("Error in number of dimensions")
 
 def plot_clust_points(mykmean, pt_size = 100, centroid_size=200, pt_marker="o", centroid_marker="X"):
     # create a color map object based on a rainbow colormap
@@ -237,9 +285,9 @@ def plot_clust_points(mykmean, pt_size = 100, centroid_size=200, pt_marker="o", 
     idx_sh = list(range(mykmean.k))
     random.shuffle(idx_sh)
 
-    # assign a color for points and a centroid for each cluster
-    for i in mykmean.points:
-        plt.scatter(i.x, i.y, c=[cmap(idx_sh[i.cluster_id - 1])], marker=pt_marker, s=pt_size)
+    # # assign a color for points and a centroid for each cluster
+    # for i in mykmean.points:
+    #     plt.scatter(i.x, i.y, c=[cmap(idx_sh[i.cluster_id - 1])], marker=pt_marker, s=pt_size)
 
     for i in mykmean.centroids:
         pt = mykmean.centroids[i]
